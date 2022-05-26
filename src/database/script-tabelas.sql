@@ -31,8 +31,6 @@ CREATE TABLE medida (
 );
 
 
-
-
 /* para sql server - remoto - produção */
 
 CREATE TABLE usuario (

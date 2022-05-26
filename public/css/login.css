@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+
+}
+
+body{
+    background-color: #72a4c9;
+    background-image: linear-gradient(160deg, #72a4c9 0%, #80b2d0 100%);     
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main {
+    background-color: #fff;
+    width: 340px;
+    height: 50vh;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 2);
+    border-radius: 8px;
+
+
+}
+main h2{
+    font-weight: 600;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+main h2::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    bottom: 3px;
+    left: 0;
+    border-radius:8px ;
+    background-color: #74a3c4;
+}
+
+.campos{
+    position: relative;
+
+}
+
+.campos input{
+    outline: none;
+    font-size: 15px ;
+    color:rgba(0, 0, 0, 7); 
+}
+
+ .underline::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background-color: #74a3c4;
+    
+}
+
+
+
+
+
+
+
+button{
+    margin-top: 1rem;
+    padding: 0.4rem;
+    background:#000000;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    color: rgba(0, 0, 0, 7);
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    
+}
+a{
+    text-decoration: none;
+    color: #000000;
+    
+}
+
