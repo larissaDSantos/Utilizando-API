@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcquaTec | Dashboards</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="dashboards.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/analytics.css">
+    <!-- <link rel="stylesheet" href="dashboards.css"> -->
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,7 +28,10 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AcquaTec</h1>
+            <div class="logo">
+
+                <h2>Marriot</h2>
+            </div>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -35,19 +39,19 @@
 
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Analytics</h3>
                 </a>
             </div>
-
+<!-- 
             <div class="btn-nav">
 
                 <h3>Gráficos</h3>
 
-            </div>
+            </div> -->
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Mural</h3>
                 </a>
             </div>
 
@@ -57,25 +61,107 @@
 
         </div>
 
-        <div class="dash">
-            <div class="btns-dash">
+        <!-- <div class="dash"> -->
+            <!-- <div class="btns-dash"> -->
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart" onclick="obterDadosGrafico(1)">Aquario 1</button>
+                <!-- <button class="btn-chart" onclick="obterDadosGrafico(1)">Aquario 1</button>
                 <button class="btn-chart" onclick="obterDadosGrafico(2)">Aquario 2</button>
                 <button class="btn-chart" onclick="obterDadosGrafico(3)">Aquario 3</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(4)">Aquario 4</button>
-            </div>
-            <div class="graph">
+                <button class="btn-chart" onclick="obterDadosGrafico(4)">Aquario 4</button> -->
+            <!-- </div>
+            
+            
+            
+            -->
+            <!-- <div class="graph">
                 <canvas id="canvas_grafico"></canvas>
-            </div>
-        </div>
-    </div>
+            </div> -->
+     
+            <div class="dash-right">
 
+                <div class="avisos">
+                    <div class="container">
+                        <h2>Desempenho no Quiz</h2>
+                     
+                        <div class="grafico">
+                        <div>
+                            <canvas id="myChart" style="position: relative; height:40vh; width:40vw;"></canvas>
+                          </div>
+                     </div>
+                    </div>
+
+                 
+                    <div class="alerta">
+                        <h3>Situação</h3>
+                    </div>
+                    <div class="analytics">
+                        <div class="titulo">
+                        <h3>Analytics</h3>
+                            </div>
+                        <div class="circulos">
+                        <div class="circulo1"></div> 
+                        <div class="circulo3"></div> 
+                        <div class="circulo4"></div> 
+                        <div class="circulo2"></div>
+                        </div>
+                        <div class="metricas">
+                        <div class="analytics1">Parabéns!!</div>
+                        <div class="analytics1">Muito bom!!</div>
+                        <div class="analytics1">Pode melhorar!!</div>
+                        <div class="analytics2">Tente mais uma vez!!</div>
+                    </div>
+
+                  
+                   </div>
+             
+              
+                </div>
 
 </body>
 
 </html>
 
+<script>
+
+const data = {
+  labels: [
+  'Amarelo',
+    'Azul',
+    'Roxo',
+    'Rosa',
+    
+ 
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [1, 6,1,2],
+    backgroundColor: [
+      '#ffe66d',
+      '#72a4c9',
+      '#cdb4db',
+      '#ffafcc',
+      
+    ],
+    hoverOffset: 4
+  }]
+};
+    const config = {
+      type: 'pie',
+      data: data,
+      options: {}
+    };
+
+
+</script>
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+ 
+  </script>
+<!-- 
 <script>
 
     let proximaAtualizacao;
@@ -161,7 +247,7 @@
                 },
                 scales: {
                     yAxes: [{
-                        type: 'linear',
+                        type: 'pie',
                         display: true,
                         position: 'left',
                         id: 'y-temperatura',
@@ -171,7 +257,7 @@
                             min: 0
                         }
                     }, {
-                        type: 'linear',
+                        type: 'pie',
                         display: false,
                         position: 'right',
                         id: 'y-umidade',
@@ -236,4 +322,4 @@
             });
 
     }
-</script>
+</script> -->

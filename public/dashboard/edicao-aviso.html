@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcquaTec | Página Inicial</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./dashboards.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/perfil.css">
+    <!-- <link rel="stylesheet" href="./dashboards.css"> -->
+
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), listarInfosDeUm()" style="background-color: #161618;">
+<body onload="validarSessao(), listarInfosDeUm()">
     <!-- <body onload="validarSessao()"> -->
 
     <div class="janela">
@@ -26,7 +28,10 @@
 
         <div class="header-left">
 
-            <h1>AcquaTec</h1>
+            <div class="logo">
+
+                <h2>Marriot</h2>
+            </div>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -34,7 +39,7 @@
 
             <div class="btn-nav-white">
                 <a href="cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Analytics</h3>
                 </a>
             </div>
 
@@ -44,11 +49,11 @@
                 </a>
             </div>
 
-            <div class="btn-nav-white">
+            <!-- <div class="btn-nav-white">
                 <a href="./mural.html">
                     <h3>Mural de Avisos</h3>
                 </a>
-            </div>
+            </div> -->
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -62,7 +67,7 @@
                 <div class="container">
                     <h1>Editar um aviso</h1>
                     <div class="div-form">
-                        <label>
+                        <!-- <label>
                             ID:
                             <br>
                             <input id="input_id" maxlength="100" type="text" style="color: rgb(196, 196, 196)" disabled>
@@ -78,10 +83,10 @@
                             <br>
                             <input id="input_titulo" maxlength="100" type="text" style="color: rgb(196, 196, 196)"
                                 disabled>
-                        </label>
+                        </label> -->
                         <br>
                         <label>
-                            Descrição (máximo de 250 caracteres):
+                            Descrição:
                             <br>
                             <textarea id="textarea_descricao" maxlength="250" rows="5"></textarea>
                         </label>
