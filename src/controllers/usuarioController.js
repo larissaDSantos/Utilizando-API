@@ -95,9 +95,42 @@ function cadastrar(req, res) {
     }
 }
 
+function  cadastrar_quiz(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var erro = req.body.errosServer;
+    var acerto = req.body.acertosServer;
+    
+
+    // Faça as validações dos valores
+    if (erro == undefined) {
+        res.status(400).send(" undefined!");
+    } else if (acerto == undefined) {
+        res.status(400).send("está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrar_quiz(acerto, erro)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    cadastrar_quiz
 }

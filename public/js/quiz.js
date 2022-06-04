@@ -1,8 +1,8 @@
-var pergunta;
-var alternativa;
-var alternativa;
 var total = 0;
- 
+var totalQuestoes = 10;
+var erros = 0;
+
+
 // function comecar() {
 //     questao1.style.display ='block';
 // }
@@ -137,10 +137,13 @@ function proximo9() {
 }
 function fim() {
     clear();
-
+    cadastrar_quiz();
     questao10.style.display ='none';
     final.style.display ='block';
     acertos.innerHTML = total;
+    erros = totalQuestoes - total;
+    // erro.innerHTML = erros;
+
 
 }
 
@@ -198,3 +201,58 @@ function clear() {
 
     
 }
+
+
+
+  function  cadastrar_quiz() {
+      
+    var acertosVar = total;
+    var errosVar = erros;
+      console.log("entrei no cadastrar")
+    //   aguardar();
+
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+ 
+    
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrarQuiz", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              // crie um atributo que recebe o valor recuperado aqui
+              // Agora vá para o arquivo routes/usuario.js
+              acertosServer: acertosVar,
+              errosServer: errosVar,
+              
+             
+          })
+         
+      }).then(function (resposta) {
+          console.log("entrei no fetch")
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+              // cardErro.style.display = "block"
+              // mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+            //   window.location = "login.html";
+              // limparFormulario();
+              // finalizarAguardar();
+          } else {
+              throw ("Houve um erro ao tentar realizar o cadastro!");
+          }
+      }).catch(function (resposta) {
+          console.log("cair no fetch")
+          console.log(`#ERRO: ${resposta}`);
+          // finalizarAguardar();
+      });
+
+      return false;
+  }
+
+  // function sumirMensagem() {
+  //     cardErro.style.display = "none"
+  // }
+
