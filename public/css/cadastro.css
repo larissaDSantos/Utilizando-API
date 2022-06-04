@@ -102,3 +102,30 @@ span{
     text-decoration: none;
 }
 
+.alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .card_erro {
+    display: none;
+    background-color: #fff;
+    color: red;
+    width: 200px;
+    position: fixed;
+    border-radius: 10px;
+    /* border:  1px solid rgb(128, 127, 127); */
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 2); */
+    padding: 10px;
+    margin-top: -4.5%;
+    margin-right: -2%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 300;
+    font-size: 14px;
+    color: red;
+  
+
+  }
+  

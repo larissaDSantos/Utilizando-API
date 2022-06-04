@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Cadastro</title>
+    <title>Cadastro</title>
 
 
     <script src="./js/funcoes.js"></script>
@@ -16,7 +16,8 @@
 </head>
 
 <body>
-
+    
+    </div>
     <main class="container">
         <h2>Cadastro</h2>
      <div class="formulario">
@@ -28,7 +29,7 @@
             <br>
             <div class="campos">
                 <input type="text" id="email_input" placeholder="Insira um email válido">
-                <div class="underline"></div>
+                <div class="underline" id="div_email"></div>
             </div>
             <br>
             <div class="campos">
@@ -46,6 +47,10 @@
             <button onclick="cadastrar()">Cadastrar</button>
     
         </form>
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
        
     </main>
       
@@ -84,9 +89,10 @@
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             console.log("entrei no if de validação vazio")
 
-            // cardErro.style.display = "block"
-            // mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
-            alert("Preencha todos os campos para prosseguir!");
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos!";
+            // alert("Preencha todos os campos para prosseguir!");
+        
 
             finalizarAguardar();
             return false;
@@ -97,11 +103,12 @@
 
         if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
             console.log("entrei no if de validação email")
-            // cardErro.style.display = "block"
-            // mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
-            alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "E-mail inválido!";
+            // alert("Ops, e-mail inválido! Verifique e tente novamente.");
             finalizarAguardar();
             return false;
+            // div_email.innerHTML = `<span style= "border-color: red;"></span>`;
         }
         // else {
         //  setInterval(sumirMensagem, 5000)
@@ -110,15 +117,34 @@
         if (senhaVar != confirmacaoSenhaVar) {
             console.log("entrei no if de validação senha")
 
-            // cardErro.style.display = "block"
-            // mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
-            alert("As senhas inseridas devem ser iguais para prosseguir!");
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais!";
+            // alert("As senhas inseridas devem ser iguais para prosseguir!");
 
             finalizarAguardar();
             return false;
         }
         // else {
         //      setInterval(sumirMensagem, 5000)
+        // }
+
+        if (senhaVar.length < 8) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Senha deve conter no mínimo 8 caracteres";
+            finalizarAguardar();
+            return false;
+        }
+
+        // if (senhaVar.indexOf("@") == -1 || senhaVar.indexOf(".") == -1 || senhaVar.indexOf("#") == -1 
+        // || senhaVar.indexOf("$") == -1 || senhaVar.indexOf("_") == -1 || senhaVar.indexOf("*") == -1 
+        // || senhaVar.indexOf("!") == -1 || senhaVar.indexOf("&") == -1) {
+        //     console.log("utilize caracteres especiais (@.#$_*!&)")
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "Utilize caracteres especiais (@.#$_*!&)";
+        //     // alert("Ops, e-mail inválido! Verifique e tente novamente.");
+        //     finalizarAguardar();
+        //     return false;
+        //     // div_email.innerHTML = `<span style= "border-color: red;"></span>`;
         // }
 
         // Enviando o valor da nova input

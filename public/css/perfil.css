@@ -331,7 +331,7 @@ background: none;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-/* width: 30%; */
+  /* border-bottom: 3px solid #e6005a; */
   padding: 20px;
 }
 
@@ -340,15 +340,20 @@ background: none;
 }
 
 .div-results {
-  width: 90%;
-  margin-left: -90px;
+  width: 100%;
+  /* margin-left: -90px;
+  margin-bottom: 80px; */
+
+
 }
 
 .div-results .feed-container {
   background-color: #72a4c9;
     background-image: linear-gradient(160deg, #72a4c9 0%, #80b2d0 100%); 
   border-radius: 5px;
-  margin-bottom: 80px;
+  margin-bottom: 10%;
+
+
 }
 
 .div-buttons {
