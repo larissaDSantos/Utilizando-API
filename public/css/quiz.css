@@ -182,13 +182,21 @@ button{
   font-family: Poppins;
   margin-left: 5% ;
   width: 50%;
+  text-decoration: none;
+
   
 }
 
 .botao_fim{
   display: flex;
   justify-content: center;
+  text-decoration: none;
 
+
+}
+.botao_fim a{
+  text-decoration: none;
+  color: #fff;
 }
 
 

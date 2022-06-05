@@ -1,6 +1,8 @@
+
 var total = 0;
 var totalQuestoes = 10;
 var erros = 0;
+var acertosVar = 0;
 
 
 // function comecar() {
@@ -86,6 +88,7 @@ function proximo1() {
 function recomecar() {
     final.style.display = 'none';
     questao1.style.display ='block';
+
 }
 
 function proximo2() {
@@ -141,7 +144,7 @@ function fim() {
     questao10.style.display ='none';
     final.style.display ='block';
     acertos.innerHTML = total;
-    erros = totalQuestoes - total;
+ 
     // erro.innerHTML = erros;
 
 
@@ -203,11 +206,11 @@ function clear() {
 }
 
 
-
-  function  cadastrar_quiz() {
-      
-    var acertosVar = total;
-    var errosVar = erros;
+  function cadastrar_quiz() {
+    acertosVar = 0;
+    acertosVar = total;
+    erros = totalQuestoes - total;
+    // var idUsuario = sessionStorage.ID_USUARIO;
       console.log("entrei no cadastrar")
     //   aguardar();
 
@@ -216,7 +219,7 @@ function clear() {
  
     
       // Enviando o valor da nova input
-      fetch("/usuarios/cadastrarQuiz", {
+      fetch("/usuarios/cadastrar_quiz", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -224,8 +227,9 @@ function clear() {
           body: JSON.stringify({
               // crie um atributo que recebe o valor recuperado aqui
               // Agora vá para o arquivo routes/usuario.js
+            //   idServer: idUsuario,
               acertosServer: acertosVar,
-              errosServer: errosVar,
+              errosServer: erros,
               
              
           })
@@ -251,8 +255,3 @@ function clear() {
 
       return false;
   }
-
-  // function sumirMensagem() {
-  //     cardErro.style.display = "none"
-  // }
-
