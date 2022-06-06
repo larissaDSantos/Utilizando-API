@@ -93,8 +93,8 @@
 
                  
                     <div class="alerta">
-                        <h3>Situação</h3>
-                        <div id="situacao"></div>
+                        <h3>Situação:</h3>
+                        <div id="situacao" class="situa"></div>
                     </div>
                     <div class="analytics">
                         <div class="titulo">
@@ -164,7 +164,7 @@ function atualizarQuiz(idp) {
             situacao.innerHTML = "Tente mais uma vez!!";
             situacao.style.color = "#ffe66d";
         }
-       else if(teste >=3 && teste <= 5){
+       else if(acerto >=3 && acerto <= 5){
             situacao.innerHTML = "Pode melhorar!!";
             situacao.style.color = "#ffafcc";
         }

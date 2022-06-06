@@ -450,7 +450,7 @@ margin-top: 110px;
   background-color: #F5F5F5;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   margin-left: 60%;
   border-radius: 20px;
   display: flex;
@@ -461,6 +461,19 @@ margin-top: -420px;
  
 }
 .alerta h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #000;
   text-align: center;
+}
+.alerta .situa{
+  /* margin-top: 15%; */
+  margin-left: 4%; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px ;
 }
