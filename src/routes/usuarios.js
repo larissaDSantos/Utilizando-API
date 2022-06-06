@@ -16,12 +16,12 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 
-router.post("/cadastrar_quiz", function (req, res) {
+router.post("/cadastrar_quiz/:idu", function (req, res) {
     usuarioController.cadastrar_quiz(req, res);
 })
 
-router.post("/listar_quiz", function (req, res) {
-    usuarioController.cadastrar_quiz(req, res);
+router.get("/listar_quiz/:idp", function (req, res) {
+    usuarioController.listar_quiz(req, res);
 })
 
 

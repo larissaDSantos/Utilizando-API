@@ -97,9 +97,11 @@ function cadastrar(req, res) {
 
 function  cadastrar_quiz(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    // var id = req.body.idServer;
+    var id = req.params.idu;
     var erro = req.body.errosServer;
     var acerto = req.body.acertosServer;
+
+    console.log("MORANGO "+id);
     
 
     // Faça as validações dos valores
@@ -110,7 +112,7 @@ function  cadastrar_quiz(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar_quiz(acerto, erro)
+        usuarioModel.cadastrar_quiz(acerto, erro,id)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -129,13 +131,13 @@ function  cadastrar_quiz(req, res) {
 }
 
 function listar_quiz(req, res) {
-    console.log("entrei");
     var id = req.params.idp;
+    console.log("To no controlleeeeeer"+id);
     var erro = req.body.errosServer;
     var acerto = req.body.acertosServer;
     // console.log("SUCO DE UVA "+ id);
 
-    usuarioModel.listar_quiz(id, erro, acerto).then(function (resultado) {
+    usuarioModel.listar_quiz(id).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

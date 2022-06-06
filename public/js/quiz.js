@@ -138,9 +138,12 @@ function proximo9() {
     questao9.style.display ='none';
     questao10.style.display ='block';
 }
-function fim() {
+
+idu = sessionStorage.ID_USUARIO;
+function fim(idu) {
+    console.log("ABACATE"+idu);
     clear();
-    cadastrar_quiz();
+    cadastrar_quiz(idu);
     questao10.style.display ='none';
     final.style.display ='block';
     acertos.innerHTML = total;
@@ -205,8 +208,7 @@ function clear() {
     
 }
 
-
-  function cadastrar_quiz() {
+  function cadastrar_quiz(idu) {
     acertosVar = 0;
     acertosVar = total;
     erros = totalQuestoes - total;
@@ -219,7 +221,7 @@ function clear() {
  
     
       // Enviando o valor da nova input
-      fetch("/usuarios/cadastrar_quiz", {
+      fetch(`/usuarios/cadastrar_quiz/${idu}`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
