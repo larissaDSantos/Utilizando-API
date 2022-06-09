@@ -135,7 +135,7 @@ function listar_quiz(req, res) {
     console.log("To no controlleeeeeer"+id);
     var erro = req.body.errosServer;
     var acerto = req.body.acertosServer;
-    // console.log("SUCO DE UVA "+ id);
+
 
     usuarioModel.listar_quiz(id).then(function (resultado) {
         if (resultado.length > 0) {
